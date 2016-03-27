@@ -1,41 +1,47 @@
 package hellotvxlet;
 
 import java.awt.Color;
+import java.awt.MediaTracker;
 import java.awt.event.ActionEvent;
 import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
+import org.havi.ui.HComponent;
 import org.havi.ui.HScene;
 import org.havi.ui.HSceneFactory;
 import org.havi.ui.HText;
 import org.havi.ui.HVisible;
 import org.havi.ui.event.HActionListener;
 
-public class HelloTVXlet implements Xlet, HActionListener {
+public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
 
     HScene scene;
-    Card c1, c2;
-    int[] match = {1, 2};
-    String[] bg = {"android.jpg", "amazon.jpg"};
-    Card[] cards=new Card[bg.length*2];
+    int[] match = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
+    String[] bg = {"amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg", "amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg"};
+    Card[] cards = new Card[bg.length];
     int countTurned = -1;
     Card[] turnedCards = new Card[2];
     int score = 0;
+    MediaTracker mt;
 
     public void initXlet(XletContext ctx) throws XletStateChangeException {
         scene = HSceneFactory.getInstance().getDefaultHScene();
         // BACKGROUND COLOR
         scene.setBackground(Color.BLACK);
         scene.setBackgroundMode(HVisible.BACKGROUND_FILL);
-
         HText t = new HText("Speler 1", 10, 10, 85, 75);
-        for (int j = 1; j <= 2; j++) {
-            for (int i = 0; i < bg.length; i++) {
-                cards[i*j] = new Card(105 + i * 60 * j, 10, bg[i], match[i]);
-                cards[i*j].setActionCommand(Integer.toString(i*j));
-                cards[i*j].addHActionListener(this);
+        int x = 105 - 70, y = 10;
+        for (int i = 0; i < bg.length; i++) {
+            x += 70;
+            if (i % 8 == 0) {
+                x = 105;
+                y += 70;
             }
+            cards[i] = new Card(x, y, bg[i], match[i]);
+            cards[i].setActionCommand(Integer.toString(i));
+            cards[i].addHActionListener(this);
         }
+        // enkel links en recht pijltjes...
         for (int i = 0; i < cards.length; i++) {
             int prev = i - 1;
             if (prev < 0) {
@@ -45,14 +51,33 @@ public class HelloTVXlet implements Xlet, HActionListener {
             if (next > cards.length - 1) {
                 next = 0;
             }
-            System.out.println("count="+cards.length+" i="+i+" p="+prev+" n="+next);
+            System.out.println("count=" + cards.length + " i=" + i + " p=" + prev + " n=" + next);
             cards[i].setFocusTraversal(null, null, cards[prev], cards[next]);
             scene.add(cards[i]);
         }
+//        int row=1;
+//        double procent=7.0;
+//        for (int i = 0; i < 24; i++) {
+//            if(i%8==0&&i!=0){
+//                row++;
+//                procent+=.5;
+//            }
+//            int prev = i - 1;
+//            if (prev < 0||(prev==procent*row+1&&row>1)) {
+//                prev = 7*row;
+//            }
+//            int next = i + 1;
+//            if (next > procent*row) {
+//                next = i-7;
+//            }
+//            System.out.println("count=" + cards.length + " i=" + i + " p=" + prev + " n=" + next+" row="+row+" pr="+procent*row);
+//            cards[i].setFocusTraversal(null, null, cards[prev], cards[next]);
+//            scene.add(cards[i]);
+//        }
         scene.add(t);
         scene.validate();
         scene.setVisible(true);
-        cards[0].requestFocus();
+        cards[8].requestFocus();
     }
 
     public void pauseXlet() {
