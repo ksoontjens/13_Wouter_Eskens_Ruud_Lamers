@@ -3,6 +3,8 @@ package hellotvxlet;
 import java.awt.Color;
 import java.awt.MediaTracker;
 import java.awt.event.ActionEvent;
+import java.util.Arrays;
+import java.util.Collections;
 import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
@@ -16,13 +18,25 @@ import org.havi.ui.event.HActionListener;
 public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
 
     HScene scene;
+    Combo[] combos = {new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg"),new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg")};
     int[] match = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
     String[] bg = {"amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg", "amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg"};
-    Card[] cards = new Card[bg.length];
+    Card[] cards = new Card[combos.length];
     int countTurned = -1;
     Card[] turnedCards = new Card[2];
     int score = 0;
     MediaTracker mt;
+
+    class Combo {
+
+        int match;
+        String bg;
+
+        public Combo(int match, String bg) {
+            this.match = match;
+            this.bg = bg;
+        }
+    }
 
     public void initXlet(XletContext ctx) throws XletStateChangeException {
         scene = HSceneFactory.getInstance().getDefaultHScene();
@@ -30,17 +44,28 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
         scene.setBackground(Color.BLACK);
         scene.setBackgroundMode(HVisible.BACKGROUND_FILL);
         HText t = new HText("Speler 1", 10, 10, 85, 75);
+        Collections.shuffle(Arrays.asList(combos));
         int x = 105 - 70, y = 10;
-        for (int i = 0; i < bg.length; i++) {
+        for (int i = 0; i < combos.length; i++) {
             x += 70;
             if (i % 8 == 0) {
                 x = 105;
                 y += 70;
             }
-            cards[i] = new Card(x, y, bg[i], match[i]);
+            cards[i] = new Card(x, y, combos[i].bg, combos[i].match);
             cards[i].setActionCommand(Integer.toString(i));
             cards[i].addHActionListener(this);
         }
+//        for (int i = 0; i < bg.length; i++) {
+//            x += 70;
+//            if (i % 8 == 0) {
+//                x = 105;
+//                y += 70;
+//            }
+//            cards[i] = new Card(x, y, bg[i], match[i]);
+//            cards[i].setActionCommand(Integer.toString(i));
+//            cards[i].addHActionListener(this);
+//        }
         // enkel links en recht pijltjes...
         for (int i = 0; i < cards.length; i++) {
             int prev = i - 1;
@@ -77,7 +102,7 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
         scene.add(t);
         scene.validate();
         scene.setVisible(true);
-        cards[8].requestFocus();
+        cards[0].requestFocus();
     }
 
     public void pauseXlet() {
