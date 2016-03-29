@@ -30,7 +30,7 @@ public class Card extends HGraphicButton {
         this.setForeground(Color.BLACK);
 //        this.setTextContent("Card", HState.ALL_STATES);
         img = this.getToolkit().getImage(imgstring);
-        back = this.getToolkit().getImage("spaceship.png");
+        back = this.getToolkit().getImage("background.jpg");
         MediaTracker mt = new MediaTracker(this);
         mt.addImage(img, 0);
         mt.addImage(back, 1);

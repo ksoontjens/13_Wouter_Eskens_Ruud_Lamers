@@ -18,14 +18,16 @@ import org.havi.ui.event.HActionListener;
 public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
 
     HScene scene;
-    Combo[] combos = {new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg"),new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg")};
-    int[] match = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
-    String[] bg = {"amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg", "amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg"};
+    Combo[] combos = {new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg"), new Combo(1, "amazon.jpg"), new Combo(2, "android.jpg"), new Combo(3, "apple.jpg"), new Combo(4, "bing.jpg"), new Combo(5, "dropbox.jpg"), new Combo(6, "evernote.jpg"), new Combo(7, "facebook.jpg"), new Combo(8, "googleplus.jpg"), new Combo(9, "imdb.jpg"), new Combo(10, "instagram.jpg"), new Combo(11, "linkedin.jpg"), new Combo(12, "pinterest.jpg"), new Combo(13, "skype.jpg"), new Combo(14, "snapchat.jpg"), new Combo(15, "soundcloud.jpg"), new Combo(16, "tumbler.jpg"), new Combo(17, "twitter.jpg"), new Combo(18, "vimeo.jpg"), new Combo(19, "whatsapp.jpg"), new Combo(20, "windows.jpg"), new Combo(21, "wordpress.jpg"), new Combo(22, "xbox.jpg"), new Combo(23, "yahoo.jpg"), new Combo(24, "youtube.jpg")};
+//    int[] match = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
+//    String[] bg = {"amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg", "amazon.jpg", "android.jpg", "apple.jpg", "bing.jpg", "dropbox.jpg", "evernote.jpg", "facebook.jpg", "googleplus.jpg", "imdb.jpg", "instagram.jpg", "linkedin.jpg", "pinterest.jpg", "skype.jpg", "snapchat.jpg", "soundcloud.jpg", "tumbler.jpg", "twitter.jpg", "vimeo.jpg", "whatsapp.jpg", "windows.jpg", "wordpress.jpg", "xbox.jpg", "yahoo.jpg", "youtube.jpg"};
     Card[] cards = new Card[combos.length];
     int countTurned = -1;
     Card[] turnedCards = new Card[2];
     int score = 0;
     MediaTracker mt;
+    Player[] players = new Player[2];
+    int activePlayer = 0;
 
     class Combo {
 
@@ -43,7 +45,12 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
         // BACKGROUND COLOR
         scene.setBackground(Color.BLACK);
         scene.setBackgroundMode(HVisible.BACKGROUND_FILL);
-        HText t = new HText("Speler 1", 10, 10, 85, 75);
+        HText p3 = new HText("test", 0, 100, 95, 100);
+//        scene.add(p3);
+        players[0] = new Player("Speler 1", 0, 0, 95, 100);
+        players[1] = new Player("Speler 2", 0, 100, 95, 100);
+        players[activePlayer].active();
+        // kaartjes shuffelen en grid opbouwen
         Collections.shuffle(Arrays.asList(combos));
         int x = 105 - 70, y = 10;
         for (int i = 0; i < combos.length; i++) {
@@ -56,52 +63,47 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
             cards[i].setActionCommand(Integer.toString(i));
             cards[i].addHActionListener(this);
         }
-//        for (int i = 0; i < bg.length; i++) {
-//            x += 70;
-//            if (i % 8 == 0) {
-//                x = 105;
-//                y += 70;
-//            }
-//            cards[i] = new Card(x, y, bg[i], match[i]);
-//            cards[i].setActionCommand(Integer.toString(i));
-//            cards[i].addHActionListener(this);
-//        }
-        // enkel links en recht pijltjes...
+        // navigatie op orde brengen
+        int[] nextArray = {7, 15, 23, 31, 39, 47};
         for (int i = 0; i < cards.length; i++) {
             int prev = i - 1;
-            if (prev < 0) {
-                prev = cards.length - 1;
+            if (i % 8 == 0) {
+                prev = i + 7;
+            } else {
+                if (prev < 0) {
+                    prev = cards.length - 1;
+                }
             }
+            boolean foundIndex = false;
             int next = i + 1;
-            if (next > cards.length - 1) {
-                next = 0;
+            for (int j = 0; j < nextArray.length; j++) {
+                if (nextArray[j] == i) {
+                    foundIndex = true;
+                    next = i - 7;
+                }
             }
-            System.out.println("count=" + cards.length + " i=" + i + " p=" + prev + " n=" + next);
-            cards[i].setFocusTraversal(null, null, cards[prev], cards[next]);
+            if (!foundIndex) {
+                if (next > cards.length - 1) {
+                    next = 0;
+                }
+            }
+            int down = i + 8;
+            if (down >= cards.length) {
+                down -= 48;
+            }
+            int up = i - 8;
+            if (up < 0) {
+                up += 48;
+            }
+//            System.out.println("count=" + cards.length + " i=" + i + " p=" + prev + " n=" + next);
+            cards[i].setFocusTraversal(cards[up], cards[down], cards[prev], cards[next]);
             scene.add(cards[i]);
         }
-//        int row=1;
-//        double procent=7.0;
-//        for (int i = 0; i < 24; i++) {
-//            if(i%8==0&&i!=0){
-//                row++;
-//                procent+=.5;
-//            }
-//            int prev = i - 1;
-//            if (prev < 0||(prev==procent*row+1&&row>1)) {
-//                prev = 7*row;
-//            }
-//            int next = i + 1;
-//            if (next > procent*row) {
-//                next = i-7;
-//            }
-//            System.out.println("count=" + cards.length + " i=" + i + " p=" + prev + " n=" + next+" row="+row+" pr="+procent*row);
-//            cards[i].setFocusTraversal(null, null, cards[prev], cards[next]);
-//            scene.add(cards[i]);
-//        }
-        scene.add(t);
+        scene.add(players[0]);
+        scene.add(players[1]);
         scene.validate();
         scene.setVisible(true);
+        // eerste kaartje focus geven
         cards[0].requestFocus();
     }
 
@@ -124,10 +126,16 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
             if (countTurned == 1) {
                 countTurned = -1;
                 if (turnedCards[0].match == turnedCards[1].match) {
-                    score++;
+                    players[activePlayer].scored();
                     turnedCards[0].block();
                     turnedCards[1].block();
                 } else {
+                    players[activePlayer].deactive();
+                    activePlayer++;
+                    if (activePlayer >= players.length) {
+                        activePlayer = 0;
+                    }
+                    players[activePlayer].active();
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
