@@ -6,6 +6,7 @@ package hellotvxlet;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import org.dvb.ui.DVBColor;
 import org.havi.ui.HComponent;
 import org.havi.ui.HText;
 import org.havi.ui.HVisible;
@@ -32,7 +33,7 @@ public class Player extends HComponent {
 
     public void paint(Graphics g) {
         if (active==true) {
-            g.setColor(Color.RED);
+            g.setColor(new DVBColor(0, 151, 0, 255));
         } else {
             g.setColor(Color.BLUE);
         }

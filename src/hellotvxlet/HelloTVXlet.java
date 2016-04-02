@@ -45,18 +45,14 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
         // BACKGROUND COLOR
         scene.setBackground(Color.BLACK);
         scene.setBackgroundMode(HVisible.BACKGROUND_FILL);
-        HText p3 = new HText("test", 0, 100, 95, 100);
-//        scene.add(p3);
-        players[0] = new Player("Speler 1", 0, 0, 95, 100);
-        players[1] = new Player("Speler 2", 0, 100, 95, 100);
-        players[activePlayer].active();
         // kaartjes shuffelen en grid opbouwen
         Collections.shuffle(Arrays.asList(combos));
-        int x = 105 - 70, y = 10;
+        int x = 125, y = 10;
+        System.out.println(x);
         for (int i = 0; i < combos.length; i++) {
             x += 70;
             if (i % 8 == 0) {
-                x = 105;
+                x = 125;
                 y += 70;
             }
             cards[i] = new Card(x, y, combos[i].bg, combos[i].match);
@@ -99,12 +95,18 @@ public class HelloTVXlet extends HComponent implements Xlet, HActionListener {
             cards[i].setFocusTraversal(cards[up], cards[down], cards[prev], cards[next]);
             scene.add(cards[i]);
         }
+        // spelers aanmaken
+        players[0] = new Player("Speler 1", 0, 80, 105, 100);
+        players[1] = new Player("Speler 2", 0, y-40, 105, 100);
+        //spelers aan scene toevoegen
         scene.add(players[0]);
         scene.add(players[1]);
         scene.validate();
         scene.setVisible(true);
         // eerste kaartje focus geven
         cards[0].requestFocus();
+        // speler actief zetten
+        players[activePlayer].active();
     }
 
     public void pauseXlet() {
