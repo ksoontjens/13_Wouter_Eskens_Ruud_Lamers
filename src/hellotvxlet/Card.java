@@ -13,7 +13,7 @@ import org.havi.ui.HVisible;
 
 /**
  *
- * @author student
+ * @author Ruud Lamers, Wouter Eskens
  */
 public class Card extends HGraphicButton {
 
@@ -28,7 +28,6 @@ public class Card extends HGraphicButton {
         this.setBackground(Color.WHITE);
         this.setBackgroundMode(HVisible.BACKGROUND_FILL);
         this.setForeground(Color.BLACK);
-//        this.setTextContent("Card", HState.ALL_STATES);
         img = this.getToolkit().getImage(imgstring);
         back = this.getToolkit().getImage("background.jpg");
         MediaTracker mt = new MediaTracker(this);
