@@ -1,12 +1,12 @@
 import java.lang.*;
 
 /**
-*	Deze klasse (Oef9P32) is een programma
+*	Deze klasse (P31Oef4) is een programma
 *	@author Wouter Eskens
 *	@version 1.5
 */
 
-public class Oef9P32
+public class P31Oef4
 {
 	/**
 	* Dit is de main methode
@@ -21,10 +21,7 @@ public class Oef9P32
 		Werknemer Jos = new Werknemer("Jos", "Met het Hoofddeksel", 4, 35.0f);
 		PartTimeWerknemer Suzy = new PartTimeWerknemer("Suzy", "Met de Boerka", 5, 20.0f, 20);
 		PartTimeWerknemer Nancy = new PartTimeWerknemer("Nancy", "De Kuisvrouw", 6, 20.0f, 30);
-		StudentWerknemer Robin = new StudentWerknemer("Robin", "De Student", 7, 15.0f, 5);
 		
-		Jan.betaal();
-		Suzy.betaal();
-		Robin.betaal();
+		Suzy.salarisVerhogen(10);
 	}
 }

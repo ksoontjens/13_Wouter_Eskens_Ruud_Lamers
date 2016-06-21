@@ -1,12 +1,12 @@
 import java.lang.*;
 
 /**
-*	Deze klasse (Oef3P31) is een programma
+*	Deze klasse (P31Oef3) is een programma
 *	@author Wouter Eskens
 *	@version 1.5
 */
 
-public class Oef3P31
+public class P31Oef3
 {
 	/**
 	* Dit is de main methode

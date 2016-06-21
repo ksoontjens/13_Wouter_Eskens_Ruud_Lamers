@@ -1,12 +1,12 @@
 import java.lang.*;
 
 /**
-*	Deze klasse (Oef7P31) is een programma
+*	Deze klasse (P32Oef9) is een programma
 *	@author Wouter Eskens
 *	@version 1.5
 */
 
-public class Oef7P31
+public class P32Oef9
 {
 	/**
 	* Dit is de main methode
@@ -23,6 +23,8 @@ public class Oef7P31
 		PartTimeWerknemer Nancy = new PartTimeWerknemer("Nancy", "De Kuisvrouw", 6, 20.0f, 30);
 		StudentWerknemer Robin = new StudentWerknemer("Robin", "De Student", 7, 15.0f, 5);
 		
-		System.out.println("RSZpercentage = " + Robin.getRSZ());
+		Jan.betaal();
+		Suzy.betaal();
+		Robin.betaal();
 	}
 }

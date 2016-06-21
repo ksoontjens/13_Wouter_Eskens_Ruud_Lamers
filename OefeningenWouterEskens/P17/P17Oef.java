@@ -1,12 +1,12 @@
 import java.lang.*;
 
 /**
-*	Deze klasse (Oef10P32) is een programma
+*	Deze klasse (P17Oef) is een programma
 *	@author Wouter Eskens
 *	@version 1.5
 */
 
-public class Oef10P32
+public class P17Oef
 {
 	/**
 	* Dit is de main methode
@@ -15,8 +15,6 @@ public class Oef10P32
 	
 	public static void main (String args[])
 	{
-		Factuur factuur = new Factuur(1, 500.0f);
-		
-		factuur.betaal();
+			System.out.println(~10);
 	}
 }
