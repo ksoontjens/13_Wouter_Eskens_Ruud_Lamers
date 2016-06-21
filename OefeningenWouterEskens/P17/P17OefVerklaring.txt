@@ -1,1 +1,0 @@
-Hierbij worden alle bits geinverteerd.
